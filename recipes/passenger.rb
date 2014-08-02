@@ -33,7 +33,6 @@ gem_package 'rake'
 gem_package 'passenger' do
   action     :install
   version    node['nginx']['passenger']['version']
-  gem_binary node['nginx']['passenger']['gem_binary'] if node['nginx']['passenger']['gem_binary']
 end
 
 template "#{node["nginx"]["dir"]}/conf.d/passenger.conf" do
